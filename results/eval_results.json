@@ -1,0 +1,50 @@
+{
+ "dqn_a_vs_bot": {
+  "games": 400,
+  "wins": 389,
+  "draws": 0,
+  "losses": 11,
+  "score": 0.9725,
+  "avg_margin": 10.475
+ },
+ "dqn_b_vs_bot": {
+  "games": 400,
+  "wins": 370,
+  "draws": 0,
+  "losses": 30,
+  "score": 0.925,
+  "avg_margin": 10.04
+ },
+ "dqn_a_vs_dqn_b": {
+  "games": 200,
+  "wins": 200,
+  "draws": 0,
+  "losses": 0,
+  "score": 1.0,
+  "avg_margin": 17.0
+ },
+ "dqn_a_vs_alphazero_nosearch": {
+  "games": 200,
+  "wins": 0,
+  "draws": 0,
+  "losses": 200,
+  "score": 0.0,
+  "avg_margin": -9.0
+ },
+ "alphazero_nosearch_vs_bot": {
+  "games": 400,
+  "wins": 399,
+  "draws": 0,
+  "losses": 1,
+  "score": 0.9975,
+  "avg_margin": 12.41
+ },
+ "dqn_a_vs_alphazero_full_engine": {
+  "games": 24,
+  "wins": 0,
+  "draws": 0,
+  "losses": 24,
+  "score": 0.0,
+  "avg_margin": -10.0
+ }
+}
