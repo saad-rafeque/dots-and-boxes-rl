@@ -27,7 +27,7 @@ method and every hyperparameter in [`docs/DQN_Dots_and_Boxes_Report.pdf`](docs/D
 
 Three things in that table are worth more than the headline.
 
-**The benchmark bot is useless past a point.** AlphaZero scores 99.8% against it and the DQN
+**The benchmark bot stops being informative past a point.** AlphaZero scores 99.8% against it and the DQN
 scores 97.3% — a gap that looks like measurement noise. Put the two on a board together and
 it's 200–0. Any conclusion drawn from bot scores alone would have been wrong, and the DQN
 reached 98.5% against that bot inside the first twenty minutes of an eight-hour run. The curve
@@ -65,7 +65,7 @@ docs/        the PDF report and the figures.
 pip install -r requirements.txt
 
 python dqn/selftest.py                          # five correctness checks, ~20 s
-python gui/dab_gui.py                           # play, or watch the two engines fight
+python gui/dab_gui.py                           # play, or watch the two engines play each other
 
 python dqn/train_dqn.py --board 5 --out runs/dqn --hours 8.5 \
     --games 384 --lr 3e-4 --nstep 3 --eps-decay-steps 4000000
@@ -85,7 +85,7 @@ search. When 24 or fewer lines remain, or the board becomes nothing but chains a
 exact alpha-beta solver takes over — with a score-independent transposition table, dominance
 pruning, and the standard loony-endgame chain theory (a chain of n ≥ 3 is worth −(n−2+|V′+2|),
 a loop of n ≥ 4 is worth −(n−4+|V′+4|)). About 40% of training targets come back as proven
-values rather than estimates, which is most of why the endgame is unbeatable.
+values rather than estimates, which is most of why its endgame play is so hard to beat.
 
 **DQN.** Dueling Double DQN with n-step returns, trained by self-play. Q(s,a) is the expected
 remaining margin for the player to move, divided by the box count so it lives in [−1, 1].
@@ -117,7 +117,7 @@ the time, with every correctness test passing.
 
 It shows the gap between the two is not about search. That's the finding. It would have been
 easy to assume the DQN loses because AlphaZero gets to think ahead — but with thinking removed
-from both sides the wipeout was total.
+from both sides the result was still 200–0.
 
 It does not show the DQN could never get there. Eight hours is one night, on two T4s.
 Prioritised replay, distributional Q-learning, a wider network and a properly sized exploration
