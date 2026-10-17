@@ -1,4 +1,4 @@
 numpy>=1.24
 numba>=0.58
 torch>=2.0
-matplotlib>=3.7   # only needed to regenerate the figures in docs/
+matplotlib>=3.11.2   # only needed to regenerate the figures in docs/
